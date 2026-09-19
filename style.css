@@ -1,0 +1,373 @@
+html
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+  
+   .logo {
+    width: 200%;
+    height: auto;
+    margin: 0 px auto;
+    justify-items: center;
+    overflow: hidden;
+    
+}
+
+
+h1 {
+    color: #ff69b4;
+}
+
+.character-area {
+    width: 100%; 
+    height: 500px; 
+    margin: 0 auto; 
+    background: #b4efff; 
+    position: relative; 
+    
+}
+.character-area h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.character-area h1 img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.character-area > img {
+    width: 200%;
+    height: 200%;
+    object-fit: contain;
+    justify-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.menu button {
+    padding: 20px 30px;
+    border: none;
+    border-radius: 10px;
+    background: #ff69b4;
+    color: white;
+    cursor: pointer;
+}
+#base,
+
+#hat{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:30px;
+    object-fit:contain;
+}
+
+#hat-menu {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  justify-items: center;
+    align-items: center;
+}
+    
+#hat-menu img {
+     width: 200px;
+    height: 200px;
+    max-width: 80px;
+    max-height: 80px;  
+    cursor: pointer;
+       margin: 0px auto;
+    text-align: center;
+    gap: 0px;
+}
+#top {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:30px;
+    object-fit: contain;
+}
+
+#top-menu {
+    display: none;
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#top-menu img {
+    width: 50px;
+    max-width: 80px;
+    max-height: 80px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+#bottom {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:30px;
+    object-fit: contain;
+}
+
+#bottom-menu {
+    display: none;
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#bottom-menu img {
+    width: 50px;
+    max-width: 80px;
+    max-height: 80px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+#dresses {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:30px;
+    object-fit: contain;
+}
+
+#dresses-menu {
+    display: none;
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#dresses-menu img {
+    width:90px;
+    max-width: 80px;
+    max-height: 80px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+#shoes {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:30px;
+    object-fit: contain;
+}
+
+#shoes-menu {
+    display: none;
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#shoes-menu img {
+    width:90px;
+    max-width: 80px;
+    max-height: 80px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+#accessories-worn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:30px;
+    pointer-events: none;
+    object-fit: contain;
+}
+
+.worn-accessory {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+
+#accessory-menu {
+    display: none;
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#accessory-menu img {
+    width: 100px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+@media (max-width: 600px) 
+
+    body {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        margin: 0;
+        padding: 0 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .character-area {
+        max-width: 100%;
+        width: 500px;
+        height: 350px;
+        margin: 20px auto;
+        overflow: hidden;
+    }
+
+    .menu{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: flex-start;
+        gap: 5px;
+        width: 100%;
+    }
+    
+    .menu button {
+        flex: 0 0 auto;
+        padding: 8px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    #hat-menu img,
+    #top-menu img,
+    #bottom-menu img,
+    #dresses-menu img,
+    #shoes-menu img,
+    #accessory-menu img {
+        width: 80px;
+    }
+    
+  #hat-menu,
+    #top-menu,
+    #bottom-menu,
+    #dresses-menu,
+    #shoes-menu,
+    #accessory-menu {
+        width: 100%;
+        max-width: 400px;
+        height: 220px;
+        margin: 15px auto;
+
+        box-sizing: border-box;
+        display: none;
+
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+
+        justify-items: center;
+        align-items: center;
+    }
+  #hat-menu img,
+    #top-menu img,
+    #bottom-menu img,
+    #dresses-menu img,
+    #shoes-menu img,
+    #accessory-menu img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        cursor: pointer;
+         margin: 15px auto;
+    }
+    .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+#hat-menu,
+#top-menu,
+#bottom-menu,
+#dresses-menu,
+#shoes-menu,
+#accessory-menu {
+    overflow-y: scroll;
+}
+
+/* แถบเลื่อน */
+#hat-menu::-webkit-scrollbar,
+#top-menu::-webkit-scrollbar,
+#bottom-menu::-webkit-scrollbar,
+#dresses-menu::-webkit-scrollbar,
+#shoes-menu::-webkit-scrollbar,
+#accessory-menu::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* ปุ่มที่ลาก */
+#hat-menu::-webkit-scrollbar-thumb,
+#top-menu::-webkit-scrollbar-thumb,
+#bottom-menu::-webkit-scrollbar-thumb,
+#dresses-menu::-webkit-scrollbar-thumb,
+#shoes-menu::-webkit-scrollbar-thumb,
+#accessory-menu::-webkit-scrollbar-thumb {
+    background: #ff69b4;
+    border-radius: 10px;
+}
+
+/* พื้นหลังของแถบ */
+#hat-menu::-webkit-scrollbar-track,
+#top-menu::-webkit-scrollbar-track,
+#bottom-menu::-webkit-scrollbar-track,
+#dresses-menu::-webkit-scrollbar-track,
+#shoes-menu::-webkit-scrollbar-track,
+#accessory-menu::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 10px;
+}
+button{
+    background-color: #ff69b4;
+    color :yellow;
+    border-non;
+    border-radius: 20px;
+
+    font-size: 15px;
+}

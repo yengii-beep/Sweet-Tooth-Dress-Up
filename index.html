@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress for FuFu</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="character-area">
+    <h1> 
+        <img src="images/Dfff.gif" alt="Dress for FuFu">
+    </h1>
+    <img src="images/ตัว.png" id="base">
+    <img src="images/ร1.png" id="shoes">
+    <img src="images/กก1.png" id="bottom">
+    <img src="images/ม1.png" id="hat">
+    <img src="images/ส1.png" id="top">
+    <img src="images/ด1.png" id="dresses">
+    <div id="accessories-worn"></div>
+    </div>
+
+    <div class="menu">
+         <button onclick="showHats()">Hat</button>
+        <button onclick="showTops()">Tops</button>
+        <button onclick="showBottoms()">Bottoms</button>
+        <button onclick="showDresses()">Dresses</button>
+        <button onclick="showShoes()">Shoes</button>
+        <button onclick="showAccessories()">Accessories</button>
+    </div>
+     <div id="hat-menu">
+
+        <img src="images2/พวม1.png" onclick="wearHat('images/ม1.png')">
+        <img src="images2/พวม2.png" onclick="wearHat('images/ม2.png')">
+        <img src="images2/พวม3.png" onclick="wearHat('images/ม3.png')">
+        <img src="images2/พวม4.png" onclick="wearHat('images/ม4.png')">
+        <img src="images2/พวม5.png" onclick="wearHat('images/ม5.png')">
+        <img src="images2/พวม6.png" onclick="wearHat('images/ม6.png')">
+        <img src="images2/พวม7.png" onclick="wearHat('images/ม7.png')">
+        <img src="images2/พวม8.png" onclick="wearHat('images/ม8.png')">
+        <img src="images2/พวม9.png" onclick="wearHat('images/ม9.png')">
+        <img src="images2/พวม10.png" onclick="wearHat('images/ม10.png')">
+        <img src="images2/พวม11.png" onclick="wearHat('images/ม11.png')">
+        <img src="images2/พวม12.png" onclick="wearHat('images/ม12.png')"> 
+    </div>
+    
+    <div id="top-menu">
+
+    <img src="images2/พวส1.png" onclick="wearTop('images/ส1.png')">
+    <img src="images2/พวส2.png" onclick="wearTop('images/ส2.png')">
+    <img src="images2/พวส3.png" onclick="wearTop('images/ส3.png')">
+    <img src="images2/พวส4.png" onclick="wearTop('images/ส4.png')">
+    <img src="images2/พวส5.png" onclick="wearTop('images/ส5.png')">
+    <img src="images2/พวส6.png" onclick="wearTop('images/ส6.png')">
+    <img src="images2/พวส7.png" onclick="wearTop('images/ส7.png')">
+    <img src="images2/พวส8.png" onclick="wearTop('images/ส8.png')">
+    <img src="images2/พวส9.png" onclick="wearTop('images/ส9.png')">
+    <img src="images2/พวส10.png" onclick="wearTop('images/ส10.png')">
+    <img src="images2/พวส11.png" onclick="wearTop('images/ส11.png')">
+    <img src="images2/พวส12.png" onclick="wearTop('images/ส12.png')">
+    <img src="images2/พวส13.png" onclick="wearTop('images/ส13.png')">
+    <img src="images2/พวส14.png" onclick="wearTop('images/ส14.png')">
+    <img src="images2/พวส15.png" onclick="wearTop('images/ส15.png')">
+    <img src="images2/พวส16.png" onclick="wearTop('images/ส16.png')">
+    <img src="images2/พวส17.png" onclick="wearTop('images/ส17.png')">
+    <img src="images2/พวส18.png" onclick="wearTop('images/ส18.png')">
+    <img src="images2/พวส19.png" onclick="wearTop('images/ส19.png')">
+    <img src="images2/พวส20.png" onclick="wearTop('images/ส20.png')">
+    </div> 
+
+
+    <div id="bottom-menu">
+    <img src="images2/พวก1.png" onclick="wearBottom('images/กก1.png')">
+    <img src="images2/พวก2.png" onclick="wearBottom('images/กก2.png')">
+    <img src="images2/พวก3.png" onclick="wearBottom('images/กก3.png')">
+    <img src="images2/พวก4.png" onclick="wearBottom('images/กก4.png')">
+    <img src="images2/พวก5.png" onclick="wearBottom('images/กก5.png')">
+    <img src="images2/พวก6.png" onclick="wearBottom('images/กก6.png')">
+    <img src="images2/พวก7.png" onclick="wearBottom('images/กก7.png')">
+    <img src="images2/พวก8.png" onclick="wearBottom('images/กก8.png')">
+    <img src="images2/พวก9.png" onclick="wearBottom('images/กก9.png')">
+    <img src="images2/พวก10.png" onclick="wearBottom('images/กก10.png')">
+    <img src="images2/พวก11.png" onclick="wearBottom('images/กก11.png')">
+    <img src="images2/พวก12.png" onclick="wearBottom('images/กก12.png')">
+    <img src="images2/พวก13.png" onclick="wearBottom('images/กก13.png')">
+    <img src="images2/พวก14.png" onclick="wearBottom('images/กก14.png')">
+    <img src="images2/พวก15.png" onclick="wearBottom('images/กก15.png')">
+    <img src="images2/พวก16.png" onclick="wearBottom('images/กก16.png')">
+    <img src="images2/พวก17.png" onclick="wearBottom('images/กก17.png')">
+    <img src="images2/พวก18.png" onclick="wearBottom('images/กก18.png')">
+    <img src="images2/พวก19.png" onclick="wearBottom('images/กก19.png')">
+    <img src="images2/พวก20.png" onclick="wearBottom('images/กก20.png')">
+    </div>
+
+    <div id="dresses-menu">
+        <img src="images2/พวด1.png" onclick="wearDress('images/ด1.png')">
+        <img src="images2/พวด2.png" onclick="wearDress('images/ด2.png')">
+        <img src="images2/พวด3.png" onclick="wearDress('images/ด3.png')">
+        <img src="images2/พวด4.png" onclick="wearDress('images/ด4.png')">
+        <img src="images2/พวด5.png" onclick="wearDress('images/ด5.png')">   
+        <img src="images2/พวด6.png" onclick="wearDress('images/ด6.png')">
+        <img src="images2/พวด7.png" onclick="wearDress('images/ด7.png')">
+    </div>
+
+    <div id="shoes-menu">
+    <img src="images2/พวร1.png" onclick="wearShoes('images/ร1.png')">
+    <img src="images2/พวร2.png" onclick="wearShoes('images/ร2.png')"> 
+    <img src="images2/พวร3.png" onclick="wearShoes('images/ร3.png')">
+    <img src="images2/พวร4.png" onclick="wearShoes('images/ร4.png')">
+    <img src="images2/พวร5.png" onclick="wearShoes('images/ร5.png')">
+    <img src="images2/พวร6.png" onclick="wearShoes('images/ร6.png')">
+    <img src="images2/พวร7.png" onclick="wearShoes('images/ร7.png')">
+    <img src="images2/พวร8.png" onclick="wearShoes('images/ร8.png')">
+    <img src="images2/พวร9.png" onclick="wearShoes('images/ร9.png')">
+    <img src="images2/พวร10.png" onclick="wearShoes('images/ร10.png')">
+    <img src="images2/พวร11.png" onclick="wearShoes('images/ร11.png')">
+    <img src="images2/พวร12.png" onclick="wearShoes('images/ร12.png')">
+    <img src="images2/พวร13.png" onclick="wearShoes('images/ร13.png')">
+    <img src="images2/พวร14.png" onclick="wearShoes('images/ร14.png')">
+    <img src="images2/พวร15.png" onclick="wearShoes('images/ร15.png')">
+    <img src="images2/พวร16.png" onclick="wearShoes('images/ร16.png')">
+    </div>
+
+    <div id="accessory-menu">
+    <img src="images2/พวคส1.png" onclick="wearAccessory('images/คส1.png')">
+    <img src="images2/พวคส2.png" onclick="wearAccessory('images/คส2.png')">
+    <img src="images2/พวคส3.png" onclick="wearAccessory('images/คส3.png')">
+    <img src="images2/พวคส4.png" onclick="wearAccessory('images/คส4.png')">
+    <img src="images2/พวคส5.png" onclick="wearAccessory('images/คส5.png')">
+    <img src="images2/พวคส6.png" onclick="wearAccessory('images/คส6.png')">
+    <img src="images2/พวคส7.png" onclick="wearAccessory('images/คส7.png')">
+    <img src="images2/พวคส8.png" onclick="wearAccessory('images/คส8.png')">
+    <img src="images2/พวว1.png" onclick="wearAccessory('images/ว1.png')">
+    <img src="images2/พวว2.png" onclick="wearAccessory('images/ว2.png')">
+    <img src="images2/พวว3.png" onclick="wearAccessory('images/ว3.png')">
+    <img src="images2/พวว4.png" onclick="wearAccessory('images/ว4.png')">
+    <img src="images2/พวคกป1.png" onclick="wearAccessory('images/คกป1.png')">
+    <img src="images2/พวคกป2.png" onclick="wearAccessory('images/คกป2.png')">
+    <img src="images2/พวคกป3.png" onclick="wearAccessory('images/คกป3.png')">
+    <img src="images2/พวคกป4.png" onclick="wearAccessory('images/คกป4.png')">
+    <img src="images2/พวค17.png" onclick="wearAccessory('images/ค17.png')">
+    <img src="images2/พวค18.png" onclick="wearAccessory('images/ค18.png')">
+    </div>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <script src="script.js"></script>
+
+</div>
+<button onclick="saveDress()">
+    บันทึกรูป
+</button>
+</body>
+</html>
