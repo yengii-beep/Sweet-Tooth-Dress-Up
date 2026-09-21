@@ -12,13 +12,13 @@ function showHats() {
     shoesMenu.style.display = "none";
     accessoryMenu.style.display = "none";
 
-    if (hatMenu.style.display === "flex") {
+    // แก้ไขเงื่อนไขการเปิด-ปิดให้ตรงกับรูปการจัดวางจริง (grid)
+    if (hatMenu.style.display === "grid") {
         hatMenu.style.display = "none";
     } else {
-        hatMenu.style.display = "grid";;
+        hatMenu.style.display = "grid";
     }
 }
-
 
 function showTops() {
     const topMenu = document.getElementById("top-menu");
@@ -34,7 +34,7 @@ function showTops() {
     shoesMenu.style.display = "none";
     accessoryMenu.style.display = "none";
 
-    if (topMenu.style.display === "flex") {
+    if (topMenu.style.display === "grid") {
         topMenu.style.display = "none";
     } else {
         topMenu.style.display = "grid";
@@ -44,7 +44,7 @@ function showTops() {
 function showBottoms() {
     const bottomMenu = document.getElementById("bottom-menu");
     const hatMenu = document.getElementById("hat-menu");
-    const topMenu = document.getElementById("top-menu")
+    const topMenu = document.getElementById("top-menu");
     const dressesMenu = document.getElementById("dresses-menu");
     const shoesMenu = document.getElementById("shoes-menu");
     const accessoryMenu = document.getElementById("accessory-menu");
@@ -55,7 +55,7 @@ function showBottoms() {
     shoesMenu.style.display = "none";
     accessoryMenu.style.display = "none";
 
-    if (bottomMenu.style.display === "flex") {
+    if (bottomMenu.style.display === "grid") {
         bottomMenu.style.display = "none";
     } else {
         bottomMenu.style.display = "grid";
@@ -76,7 +76,7 @@ function showDresses() {
     shoesMenu.style.display = "none";
     accessoryMenu.style.display = "none";
 
-    if (dressesMenu.style.display === "flex") {
+    if (dressesMenu.style.display === "grid") {
         dressesMenu.style.display = "none";
     } else {
         dressesMenu.style.display = "grid";
@@ -97,7 +97,7 @@ function showShoes() {
     dressesMenu.style.display = "none";
     accessoryMenu.style.display = "none";  
 
-    if (shoesMenu.style.display === "flex") {
+    if (shoesMenu.style.display === "grid") {
         shoesMenu.style.display = "none";
     } else {
         shoesMenu.style.display = "grid";
@@ -118,7 +118,7 @@ function showAccessories() {
     dressesMenu.style.display = "none";
     shoesMenu.style.display = "none";
 
-    if (accessoryMenu.style.display === "flex") {
+    if (accessoryMenu.style.display === "grid") {
         accessoryMenu.style.display = "none";
     } else {
         accessoryMenu.style.display = "grid";
@@ -137,7 +137,6 @@ function wearHat(hatImage) {
         hat.dataset.current = hatImage;
     }
 }
-
 
 function wearTop(topImage) {
     const top = document.getElementById("top");
@@ -208,7 +207,7 @@ function wearAccessory(accessoryImage) {
     accessoriesWorn.appendChild(accessory);
 }
 
-
+// ฟังก์ชัน saveDress รูปแบบใหม่เพื่อแก้ปัญหาดูรูปไม่ได้บนโทรศัพท์มือถือ
 function saveDress() {
     const area = document.querySelector(".character-area");
 
@@ -216,49 +215,52 @@ function saveDress() {
         scale: 2,
         useCORS: true,
         backgroundColor: "#00C9FF",
-
         onclone: function (doc) {
             const cloneArea = doc.querySelector(".character-area");
-
-            // เอาโลโก้ออก
             const logo = cloneArea.querySelector("h1");
             if (logo) {
                 logo.style.display = "none";
             }
         }
     }).then(function (canvas) {
-
         const finalCanvas = document.createElement("canvas");
         finalCanvas.width = 1080;
         finalCanvas.height = 1920;
 
         const ctx = finalCanvas.getContext("2d");
 
-        // พื้นหลังฟ้า
         ctx.fillStyle = "#b4efff";
         ctx.fillRect(0, 0, 1080, 1920);
 
-        // รักษาสัดส่วนภาพเดิม 100%
-        const scale = Math.min(
-            1080 / canvas.width,
-            1920 / canvas.height
-        );
-
         const newWidth = 1200;
-        const newHeight = 1200
+        const newHeight = 1200;
 
         ctx.drawImage(
-         canvas,
-        (1080 - newWidth) / 2,
-        (1920 - newHeight) / 2,
-         newWidth,
-        newHeight
-);
-        const link = document.createElement("a");
-        link.download = "Dress-for-FuFu.png";
-        link.href = finalCanvas.toDataURL("image/png");
-        link.click();
+            canvas,
+            (1080 - newWidth) / 2,
+            (1920 - newHeight) / 2,
+            newWidth,
+            newHeight
+        );
+
+        // แก้ไข: เปลี่ยนการดึงข้อมูลจาก toDataURL() เป็นการสร้าง Blob object เพื่อแก้ปัญหาบนมือถือ
+        finalCanvas.toBlob(function (blob) {
+            if (blob === null) return;
+
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.style.display = "none";
+            link.download = "Dress-for-FuFu.png";
+            link.href = url;
+
+            document.body.appendChild(link);
+            link.click();
+
+            // เคลียร์ค่าออกเพื่อลดภาระหน่วยความจำบนมือถือ
+            setTimeout(() => {
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+            }, 100);
+        }, "image/png");
     });
 }
-
-
